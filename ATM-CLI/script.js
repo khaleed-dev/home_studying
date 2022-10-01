@@ -13,15 +13,12 @@
 ? think throug:
     
 */
-const account = require('./Account.js')
-const readline = require('readline');
+const Account = require('./Account.js')
+const CommandLine = require('./CommandLine')
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+async function main(){
+    const accountName = await CommandLine.ask('Which account do you want to access?')
+}
 
-rl.question('which account would you like to access? ', (answer) => {
-    console.log(answer)
-    rl.close();
-});
+
+main()
